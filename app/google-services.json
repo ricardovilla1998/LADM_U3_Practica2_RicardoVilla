@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "933835901561",
+    "firebase_url": "https://practicarestaurantes.firebaseio.com",
+    "project_id": "practicarestaurantes",
+    "storage_bucket": "practicarestaurantes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933835901561:android:52b29eb62267677b4c62a8",
+        "android_client_info": {
+          "package_name": "mx.edu.ittepic.ladm_u3_practica2_ricardovilla"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933835901561-jhil1rh68j2f5f0q9gertb8a7snjh6k6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtJcPHOVYofziiUaTnMe9xXq4-vUWuLiY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933835901561-jhil1rh68j2f5f0q9gertb8a7snjh6k6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

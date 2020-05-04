@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LADM_U3_Practica2_RicardoVilla</string>
+    <array name="clavesbusqueda">
+        <item>Nombre</item>
+        <item>Descripcion</item>
+        <item>Precio</item>
+    </array>
+</resources>
