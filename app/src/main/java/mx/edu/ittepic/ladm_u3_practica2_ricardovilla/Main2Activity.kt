@@ -68,6 +68,7 @@ class Main2Activity : AppCompatActivity() {
                 0->(consultaNombre(edit_buscar.text.toString()))
                 1->(consultaDesc(edit_buscar.text.toString()))
                 2->(consultaPrecio(edit_buscar.text.toString().toDouble()))
+                3->(consultaCel(edit_buscar.text.toString()))
             }
         }
 
@@ -164,6 +165,38 @@ class Main2Activity : AppCompatActivity() {
             .addOnFailureListener {
                 Toast.makeText(this,"NO SE ELIMINO",Toast.LENGTH_LONG).show()
 
+            }
+
+    }
+
+    private fun consultaCel(valor: String) {
+        baseRestuarante.collection("restaurante")
+            .whereEqualTo("celular",valor)
+            .addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+                if(firebaseFirestoreException!=null){
+                    Toast.makeText(this,"ERROR NO SE PUEDE ACCEDER A CONSULTA", Toast.LENGTH_LONG).show()
+                    return@addSnapshotListener
+                }
+                dataLista.clear()
+                listaID.clear()
+                var cadena =""
+                for(document in querySnapshot!!){
+
+                    cadena = "Nombre: "+document.getString("nombre")+"\n"+"Domicilio: "+document.getString("domicilio")+"\nCelular: "+document.getString("celular")+
+                            "\nPEDIDO"+"\nDescripción: "+document.get("pedido.descripcion")+ "/ Precio: "+
+                            document.get("pedido.precio")+" / Cantidad: "+document.get("pedido.cantidad")+
+                            " / Entregado: "+document.get("pedido.entregado")
+                    dataLista.add(cadena)
+                    listaID.add(document.id)
+
+                }
+
+                if(dataLista.size==0){
+                    dataLista.add("NO HAY DATA")
+                }
+
+                var adaptador = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,dataLista)
+                lista.adapter =  adaptador
             }
 
     }

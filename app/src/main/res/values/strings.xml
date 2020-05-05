@@ -4,5 +4,6 @@
         <item>Nombre</item>
         <item>Descripcion</item>
         <item>Precio</item>
+        <item>Celular</item>
     </array>
 </resources>
